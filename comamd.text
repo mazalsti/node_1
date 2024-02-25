@@ -1,0 +1,28 @@
+criar uma projeto node:npm init -y
+instalar typescript: tsc --init
+instalar node_modules: npm install --save-dev @types/node
+install nodemon: npm install nodemon 
+instalar ts-node: npm install npm install ts-node
+instalar types do express: npm install @types/express 
+instalar template mustache: npm install mustache-express
+instalar types mustache: npm install --save-dev @types/mustache-express
+conf no tsconfig "moduleResolution" = node
+conf no arq tscongif "outDir": "./Dist", 
+conf no arq tscongif "rootDir": "./src",
+conf no arq tagerte: ES6 
+---------------------------------------------------------
+configurando variavel de ambiente
+comando para instalar: npm install dotenv
+importa: import dotenv from 'dotenv';
+chama a variavel: dotenv.config();
+passa no server: server.listen(process.env.PORT);
+
+----------------------------------------------------------------
+//configurando o mustache no engine
+server.set('view engine', 'mustache');
+// vincular os arquivos da views 
+server.set('views', path.join(__dirname, 'views'));
+server.engine('mustache', mustache());
+server.use(express.static(path.join(__dirname,'../public')))
+// server.use(express.static('public'))
+server.use(express.urlencoded({extended: true}));
