@@ -26,3 +26,21 @@ server.engine('mustache', mustache());
 server.use(express.static(path.join(__dirname,'../public')))
 // server.use(express.static('public'))
 server.use(express.urlencoded({extended: true}));
+
+
+O que funcionou para mim foi seguir as etapas recomendadas na sequência exata:
+Em casos raros, o cache npm pode ficar corrompido. Para mim, o que funcionou foi:
+1 - npm cache clean --force
+1.1 - Delete node_module folder
+2 - Delete package-lock.json
+2.1 - npm uninstall
+3 - npm install
+4 - npm install typescript
+5 - npm link typescript
+6 - npm run start
+--- Verifique se você instalou expresso módulo. Caso contrário, use este comando:
+6.1 - npm install --save express
+6.2 - npm install express 
+7 - For any further missing dependencies do npm install [dep] followed by npm link [dep]
+E se o seu node_modulesdiretório estiver em outro lugar, defina NODE_PATHa variável de ambiente:
+8 - set NODE_PATH=your\directory\to\node_modules;%NODE_PATH%
