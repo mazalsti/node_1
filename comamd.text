@@ -1,8 +1,8 @@
-criar uma projeto node:npm init -y
+criar uma projeto node: npm init -y
 instalar typescript: tsc --init
 instalar node_modules: npm install --save-dev @types/node
 install nodemon: npm install nodemon 
-instalar ts-node: npm install npm install ts-node
+instalar ts-node:  npm install ts-node
 instalar types do express: npm install @types/express 
 instalar template mustache: npm install mustache-express
 instalar types mustache: npm install --save-dev @types/mustache-express
